@@ -1,2 +1,3 @@
 # h-investigation-data-aquisition-method-1
- graph of the photovoltage against the reverse voltage was plotted for  each frequency of incident light. The point at which the photovoltage first dropped below  0.5% of the maximum, the corresponding reverse voltage was noted and recorded as the  stopping potential for that frequency. This method accounted for the inability to define an  exact cut-off voltage as it was predicted that the graph would trail off to zero due to the  continuous distribution of electron energy states.
+Investigation to calculate plancks constant using a photo diode. Data aquisition using Matlab for method 1 to calculate the stopping potential. Reverse voltage was applied and the photo voltage measured. Stopping potential was determined with an if statement that recorded the reverse voltage once the photo voltage had dropped below 0.5 percent of the maximum. 
+ 
