@@ -1,0 +1,2 @@
+# h-investigation-data-aquisition-method-1
+ graph of the photovoltage against the reverse voltage was plotted for  each frequency of incident light. The point at which the photovoltage first dropped below  0.5% of the maximum, the corresponding reverse voltage was noted and recorded as the  stopping potential for that frequency. This method accounted for the inability to define an  exact cut-off voltage as it was predicted that the graph would trail off to zero due to the  continuous distribution of electron energy states.
