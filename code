@@ -1,0 +1,47 @@
+daq.reset
+clear, close all
+
+
+s=daq.createSession('ni');
+s.addAnalogInputChannel('Dev1',0,'Voltage');
+
+s1 = daq.createSession('ni');
+s1.addAnalogOutputChannel('Dev1',0,'Voltage');
+
+
+s.NumberOfScans=1000;
+
+outputSingleScan(s1,0);
+
+Vrev=linspace(1,-2,150);
+
+Vdet = [];
+Vdeterr= [];
+ 
+for Vrev=linspace(1,-2,150)
+    
+    outputSingleScan(s1,Vrev);
+    [data,timestamps]=startForeground(s);
+    
+    Vdeterr=[Vdeterr, (std(data)./sqrt(1000))];
+    
+    Vdet = [Vdet, mean(data)];
+    
+    if Vdet>0.0001*max(Vdet);
+        
+        disp(Vrev);
+    else
+    end
+end
+ 
+
+Vrev=linspace(1,-2,150);
+
+
+figure(1);
+errorbar(Vrev,Vdet,Vdeterr);
+xlabel('Reverse voltage');
+ylabel('Detector voltage');
+
+
+outputSingleScan(s1,0);
